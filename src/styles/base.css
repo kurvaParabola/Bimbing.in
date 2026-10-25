@@ -1,0 +1,131 @@
+/**
+ * Bimbing.in — Base Styles & Resets
+ */
+
+@import '@fontsource/plus-jakarta-sans/400.css';
+@import '@fontsource/plus-jakarta-sans/500.css';
+@import '@fontsource/plus-jakarta-sans/600.css';
+@import '@fontsource/plus-jakarta-sans/700.css';
+@import '@fontsource/plus-jakarta-sans/800.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-primary);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-ink-black);
+  background-color: var(--surface-canvas);
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  min-height: 100vh;
+  min-width: 320px;
+  overflow-x: hidden;
+  background-color: var(--surface-canvas);
+  color: var(--color-ink-black);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Accessibility Focus Ring */
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Accessible Skip Link */
+.bi-skip-link {
+  position: absolute;
+  top: var(--spacing-16);
+  left: var(--spacing-16);
+  z-index: var(--z-skip-link);
+  padding: var(--spacing-12) var(--spacing-24);
+  background-color: var(--color-ink-black);
+  color: var(--color-paper-white);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  border-radius: var(--radius-buttons);
+  border: var(--border-sticker);
+  transform: translateY(-200%);
+  transition: transform var(--transition-fast);
+}
+
+.bi-skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Layout Utilities */
+.bi-container {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-20);
+  padding-right: var(--spacing-20);
+}
+
+@media (min-width: 768px) {
+  .bi-container {
+    padding-left: var(--spacing-32);
+    padding-right: var(--spacing-32);
+  }
+}
+
+/* Screen reader only utility */
+.bi-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}

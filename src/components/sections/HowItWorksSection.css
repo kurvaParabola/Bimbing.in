@@ -1,0 +1,90 @@
+/**
+ * Bimbing.in — HowItWorksSection Styles (Standar UI Spacing)
+ */
+
+.bi-steps-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-24);
+  list-style: none;
+}
+
+@media (min-width: 640px) {
+  .bi-steps-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .bi-steps-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.bi-step-card {
+  background-color: var(--surface-paper-card);
+  border-radius: var(--radius-feature-cards);
+  border: var(--border-sticker-thick);
+  box-shadow: var(--shadow-sticker);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.bi-step-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sticker-hover);
+}
+
+.bi-step-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-20);
+}
+
+.bi-step-card__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-cobalt-pop);
+  color: var(--color-text-on-cobalt);
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-black);
+  font-size: var(--text-heading-sm);
+  border: var(--border-sticker);
+  box-shadow: 2px 2px 0px var(--color-sticker-black);
+}
+
+.bi-step-card__icon {
+  color: var(--color-text-muted);
+}
+
+.bi-step-card__title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.4;
+  color: var(--color-ink-black);
+  margin-bottom: var(--spacing-12);
+  min-height: 50px;
+}
+
+.bi-step-card__desc {
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  color: var(--color-text-muted);
+}
+
+.bi-how-it-works__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-48);
+}

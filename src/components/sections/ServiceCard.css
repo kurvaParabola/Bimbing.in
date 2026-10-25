@@ -1,0 +1,123 @@
+/**
+ * Bimbing.in — ServiceCard Styles (Ukuran & Penataan Rapi Seragam)
+ */
+
+.bi-service-card {
+  width: 320px;
+  min-width: 320px;
+  height: 100%;
+  min-height: 480px;
+  background-color: var(--surface-paper-card);
+  border-radius: var(--radius-cards);
+  border: var(--border-sticker-thick);
+  box-shadow: var(--shadow-sticker);
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  user-select: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.bi-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sticker-hover);
+}
+
+/* Header Area */
+.bi-service-card__top {
+  display: flex;
+  flex-direction: column;
+}
+
+.bi-service-card__icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-oat-cream);
+  color: var(--color-ink-black);
+  border: var(--border-sticker);
+  margin-bottom: var(--spacing-12);
+}
+
+.bi-service-card__title-box {
+  min-height: 58px;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-8);
+}
+
+.bi-service-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-heading-sm);
+  font-weight: var(--font-weight-black);
+  line-height: var(--leading-heading-sm);
+  color: var(--color-ink-black);
+  letter-spacing: -0.01em;
+}
+
+.bi-service-card__desc {
+  font-size: var(--text-caption);
+  line-height: 1.45;
+  color: var(--color-text-muted);
+  min-height: 44px;
+  margin-bottom: var(--spacing-16);
+}
+
+/* Topics Area — Terstandar & Sejajar di Semua Kartu */
+.bi-service-card__topics-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: var(--spacing-8);
+  border-top: 1px dashed rgba(24, 24, 27, 0.15);
+}
+
+.bi-service-card__topics-label {
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-black);
+  opacity: 0.6;
+  margin-bottom: var(--spacing-8);
+}
+
+.bi-service-card__topics {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bi-service-card__topic-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-8);
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--color-ink-black);
+}
+
+.bi-service-card__topic-bullet {
+  color: var(--color-cobalt-pop);
+  flex-shrink: 0;
+}
+
+/* Bottom CTA — Terpusat di sisa ruang kosong bawah */
+.bi-service-card__bottom {
+  margin-top: var(--spacing-16);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--spacing-12);
+  border-top: var(--border-subtle);
+  width: 100%;
+}

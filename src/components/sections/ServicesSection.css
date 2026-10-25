@@ -1,0 +1,70 @@
+/**
+ * Bimbing.in — ServicesSection Carousel Styles
+ */
+
+.bi-services-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: var(--spacing-16) 0 var(--spacing-32) 0;
+}
+
+/* Gradient fade masks on edges */
+.bi-services-carousel-wrapper::before,
+.bi-services-carousel-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  z-index: 10;
+  pointer-events: none;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .bi-services-carousel-wrapper::before,
+  .bi-services-carousel-wrapper::after {
+    display: block;
+  }
+}
+
+.bi-services-carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--surface-canvas), rgba(246, 244, 238, 0));
+}
+
+.bi-services-carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--surface-canvas), rgba(246, 244, 238, 0));
+}
+
+/* Scrollable / Draggable Track */
+.bi-services-track {
+  display: flex;
+  align-items: stretch;
+  gap: var(--spacing-24);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  padding: var(--spacing-8) var(--spacing-16);
+  cursor: grab;
+  scroll-behavior: auto;
+  will-change: scroll-position;
+}
+
+.bi-services-track::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.bi-services-track--dragging {
+  cursor: grabbing !important;
+  user-select: none;
+}
+
+.bi-services-item {
+  display: flex;
+  flex-shrink: 0;
+  list-style: none;
+}

@@ -1,0 +1,100 @@
+/**
+ * Bimbing.in — Button Styles (Kontras Tinggi & Estetika Sticker Taktil)
+ */
+
+.bi-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-8);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-caption);
+  text-decoration: none;
+  border-radius: var(--radius-buttons);
+  border: var(--border-sticker);
+  box-shadow: var(--shadow-sticker);
+  cursor: pointer;
+  white-space: nowrap;
+  min-height: var(--touch-target-min);
+  min-width: var(--touch-target-min);
+  box-sizing: border-box;
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.bi-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-sticker-hover);
+}
+
+.bi-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--color-sticker-black);
+}
+
+/* Sizes */
+.bi-btn--sm {
+  padding: var(--spacing-8) var(--spacing-16);
+  font-size: var(--text-caption);
+  min-height: 40px;
+}
+
+.bi-btn--md {
+  padding: var(--spacing-12) var(--spacing-24);
+  font-size: var(--text-body);
+}
+
+.bi-btn--lg {
+  padding: var(--spacing-16) var(--spacing-32);
+  font-size: var(--text-body);
+}
+
+/* Full Width */
+.bi-btn--full {
+  width: 100%;
+}
+
+/* Variants */
+/* Primary: Cobalt Pop dengan teks putih tajam (Kontras AA/AAA, Tidak Pucat) */
+.bi-btn--primary,
+.bi-btn--whatsapp {
+  background-color: var(--color-cobalt-pop);
+  color: var(--color-text-on-cobalt);
+  border: var(--border-sticker);
+}
+
+.bi-btn--primary:hover,
+.bi-btn--whatsapp:hover {
+  background-color: var(--color-cobalt-hover);
+  color: var(--color-text-on-cobalt);
+}
+
+/* Secondary: Ink Black dengan Paper White text */
+.bi-btn--secondary {
+  background-color: var(--color-ink-black);
+  color: var(--color-paper-white);
+  border: var(--border-sticker);
+}
+
+.bi-btn--secondary:hover {
+  background-color: var(--color-sticker-black);
+  color: var(--color-paper-white);
+}
+
+/* Ghost / Outline: White background dengan teks hitam pekat */
+.bi-btn--ghost {
+  background-color: var(--color-paper-white);
+  color: var(--color-ink-black);
+  border: var(--border-sticker);
+}
+
+.bi-btn--ghost:hover {
+  background-color: var(--color-oat-cream);
+  color: var(--color-ink-black);
+}
+
+/* Fokus Terlihat */
+.bi-btn:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: 3px;
+}

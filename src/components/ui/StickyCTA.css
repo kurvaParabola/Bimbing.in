@@ -1,0 +1,39 @@
+/**
+ * Bimbing.in — StickyCTA Styles
+ */
+
+.bi-sticky-cta {
+  position: fixed;
+  bottom: var(--spacing-16);
+  left: var(--spacing-16);
+  right: var(--spacing-16);
+  z-index: var(--z-sticky-cta);
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(120%);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+@media (min-width: 768px) {
+  .bi-sticky-cta {
+    display: none !important;
+  }
+}
+
+.bi-sticky-cta--visible {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bi-sticky-cta__inner {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--color-paper-white);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-buttons);
+  border: var(--border-sticker);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}

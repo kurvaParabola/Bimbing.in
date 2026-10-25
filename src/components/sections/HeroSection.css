@@ -1,0 +1,95 @@
+/**
+ * Bimbing.in — HeroSection Styles (Standar Ideal Margin & Padding UI)
+ */
+
+.bi-hero {
+  background-color: var(--surface-hero-bg);
+  padding-top: var(--spacing-80);
+  padding-bottom: var(--spacing-96);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .bi-hero {
+    padding-top: var(--spacing-96);
+    padding-bottom: var(--spacing-128);
+  }
+}
+
+.bi-hero__inner {
+  max-width: 840px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Eyebrow Badge */
+.bi-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 8px 18px;
+  border-radius: var(--radius-tags);
+  background-color: var(--color-paper-white);
+  color: var(--color-ink-black);
+  border: var(--border-sticker);
+  box-shadow: 2px 2px 0px var(--color-sticker-black);
+  margin-bottom: var(--spacing-28);
+}
+
+.bi-hero__note-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-cobalt-pop);
+}
+
+/* Main Display Headline (Single H1) */
+.bi-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 5.2vw, 56px);
+  font-weight: var(--font-weight-black);
+  line-height: var(--leading-display);
+  color: var(--color-ink-black);
+  margin-bottom: var(--spacing-24);
+  letter-spacing: -0.03em;
+  max-width: 800px;
+}
+
+/* Subtitle Description */
+.bi-hero__subtitle {
+  font-size: clamp(16px, 2.2vw, 19px);
+  line-height: var(--leading-body);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-40);
+  max-width: 660px;
+}
+
+/* CTA Buttons Group */
+.bi-hero__cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+  width: 100%;
+  max-width: 440px;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .bi-hero__cta-group {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    max-width: none;
+    gap: var(--spacing-20);
+  }
+}

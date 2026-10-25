@@ -1,0 +1,137 @@
+/**
+ * Bimbing.in — Design Tokens
+ * Sumber: variables.css, theme.css, docs/design.md, dan prinsip UI/UX kontras tinggi.
+ */
+
+:root {
+  /* Colors — Warm, Harmonious, High-Contrast (Tidak Pucat) */
+  --color-morning-fog: #f6f4ee;       /* Kanvas hangat seperti kertas editorial */
+  --color-oat-cream: #ede4d4;         /* Permukaan oat hangat untuk badge & kartu fitur */
+  --color-ink-black: #18181b;         /* Hitam pekat untuk teks utama berkejelasan tinggi */
+  --color-sticker-black: #111111;     /* Garis sticker tegas 2-3px */
+  --color-paper-white: #ffffff;       /* Putih bersih untuk kartu di atas kanvas */
+  --color-kofi-blue: #93c5fd;         /* Biru muda lembut pendukung */
+  --color-sky-soft: #d3edff;          /* Biru pastel langit lembut (sesuai referensi Hero) */
+  --color-cobalt-pop: #2563eb;        /* Biru kobalt hidup & bertenaga untuk tombol utama */
+  --color-cobalt-hover: #1d4ed8;      /* Hover biru kobalt yang lebih dalam */
+  --color-text-on-cobalt: #ffffff;    /* Teks putih tajam di atas tombol biru */
+  --color-text-muted: #4b5563;        /* Teks pendukung kontras tinggi (rasio > 5.5:1) */
+
+  /* Typography — Font Families */
+  --font-bogue-black: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-dm-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-font-awesome-6-pro: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-font-awesome-6-brands: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-primary: var(--font-dm-sans);
+  --font-display: var(--font-bogue-black);
+
+  /* Typography — Scale & Leading */
+  --text-caption-sm: 12px;
+  --text-caption: 14px;
+  --leading-caption: 1.5;
+  --text-body: 16px;
+  --leading-body: 1.6;
+  --text-subheading: 19px;
+  --leading-subheading: 1.5;
+  --text-heading-sm: 22px;
+  --leading-heading-sm: 1.35;
+  --text-heading: 30px;
+  --leading-heading: 1.25;
+  --text-display: 44px;
+  --leading-display: 1.15;
+  --text-display-lg: 64px;
+  --leading-display-lg: 1.08;
+
+  /* Typography — Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+
+  /* Spacing Scale (Base: 4px) */
+  --spacing-unit: 4px;
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-28: 28px;
+  --spacing-32: 32px;
+  --spacing-36: 36px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-56: 56px;
+  --spacing-64: 64px;
+  --spacing-72: 72px;
+  --spacing-80: 80px;
+  --spacing-96: 96px;
+  --spacing-128: 128px;
+
+  /* Layout Standards */
+  --page-max-width: 1200px;
+  --section-gap: 80px;
+  --section-gap-lg: 104px;
+  --card-padding: 28px;
+  --card-padding-sm: 20px;
+  --element-gap: 20px;
+  --header-height: 76px;
+
+  /* Border Radius */
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-3xl-2: 40px;
+  --radius-full: 9999px;
+
+  /* Named Radii */
+  --radius-tags: 9999px;
+  --radius-cards: 36px;
+  --radius-inputs: 9999px;
+  --radius-buttons: 9999px;
+  --radius-feature-cards: 24px;
+  --radius-small-elements: 16px;
+
+  /* Surfaces */
+  --surface-canvas: var(--color-morning-fog);
+  --surface-oat-surface: var(--color-oat-cream);
+  --surface-paper-card: var(--color-paper-white);
+  --surface-blue-wash: var(--color-kofi-blue);
+  --surface-hero-bg: var(--color-sky-soft);
+
+  /* Borders & Sticker Aesthetic */
+  --border-sticker-width: 2px;
+  --border-sticker-width-thick: 2.5px;
+  --border-sticker: var(--border-sticker-width) solid var(--color-sticker-black);
+  --border-sticker-thick: var(--border-sticker-width-thick) solid var(--color-sticker-black);
+  --border-subtle: 1px solid rgba(24, 24, 27, 0.12);
+
+  /* Shadows (Tegas dengan garis batas sticker) */
+  --shadow-none: none;
+  --shadow-sticker: 3px 3px 0px var(--color-sticker-black);
+  --shadow-sticker-hover: 4px 4px 0px var(--color-sticker-black);
+
+  /* Accessibility & Interactions */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: var(--color-cobalt-pop);
+  --touch-target-min: 44px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+
+  /* Z-index layers */
+  --z-skip-link: 1000;
+  --z-header: 100;
+  --z-mobile-nav: 200;
+  --z-sticky-cta: 90;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --text-display: 54px;
+    --leading-display: 1.12;
+    --section-gap: var(--section-gap-lg);
+  }
+}

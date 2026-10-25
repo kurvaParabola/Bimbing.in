@@ -1,0 +1,80 @@
+/**
+ * Bimbing.in — FinalCTASection Styles (Standar UI Spacing)
+ */
+
+.bi-final-cta {
+  padding-top: var(--spacing-80);
+  padding-bottom: var(--spacing-96);
+}
+
+.bi-final-cta__card {
+  background-color: var(--color-paper-white);
+  border-radius: var(--radius-cards);
+  border: var(--border-sticker-thick);
+  box-shadow: var(--shadow-sticker);
+  padding: 48px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .bi-final-cta__card {
+    padding: 64px 48px;
+  }
+}
+
+.bi-final-cta__inner {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bi-final-cta__eyebrow {
+  display: inline-block;
+  font-size: var(--text-caption-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 18px;
+  border-radius: var(--radius-tags);
+  background-color: var(--color-oat-cream);
+  color: var(--color-ink-black);
+  border: var(--border-sticker);
+  box-shadow: 2px 2px 0px var(--color-sticker-black);
+  margin-bottom: var(--spacing-20);
+}
+
+.bi-final-cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4.2vw, 42px);
+  font-weight: var(--font-weight-black);
+  line-height: var(--leading-heading);
+  color: var(--color-ink-black);
+  margin-bottom: var(--spacing-16);
+  letter-spacing: -0.025em;
+}
+
+.bi-final-cta__desc {
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: var(--leading-body);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-32);
+}
+
+@media (min-width: 768px) {
+  .bi-final-cta__desc {
+    margin-bottom: var(--spacing-48);
+  }
+}
+
+.bi-final-cta__action {
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
