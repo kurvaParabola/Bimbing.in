@@ -5,6 +5,7 @@
 .bi-services-carousel-wrapper {
   position: relative;
   width: 100%;
+  max-width: 100%;
   overflow: hidden;
   padding: var(--spacing-16) 0 var(--spacing-32) 0;
 }

@@ -6,6 +6,8 @@
   padding-top: var(--section-gap);
   padding-bottom: var(--section-gap);
   position: relative;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 /* Tones */
@@ -81,4 +83,6 @@
 
 .bi-section__content {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }

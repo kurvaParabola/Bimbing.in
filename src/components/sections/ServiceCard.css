@@ -21,6 +21,13 @@
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
+@media (max-width: 360px) {
+  .bi-service-card {
+    width: 280px;
+    min-width: 280px;
+  }
+}
+
 .bi-service-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-sticker-hover);
