@@ -67,7 +67,7 @@ export default function MobileNavigation({
           <div className="bi-mobile-nav__header">
             <span className="bi-header__logo" style={{ fontSize: 'var(--text-body)' }}>
               <img
-                src="/Logo.jpg"
+                src="/Logo.png"
                 alt=""
                 className="bi-header__logo-img"
                 width="22"

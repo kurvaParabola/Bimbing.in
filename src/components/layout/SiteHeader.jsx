@@ -30,7 +30,7 @@ export default function SiteHeader() {
           aria-label={`${siteConfig.name} — Beranda`}
         >
           <img
-            src="/Logo.jpg"
+            src="/Logo.png"
             alt=""
             className="bi-header__logo-img"
             width="26"

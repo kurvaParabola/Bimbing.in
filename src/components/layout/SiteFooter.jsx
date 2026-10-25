@@ -28,7 +28,7 @@ export default function SiteFooter() {
               aria-label={`${siteConfig.name} — Kembali ke atas`}
             >
               <img
-                src="/Logo.jpg"
+                src="/Logo.png"
                 alt=""
                 className="bi-header__logo-img"
                 width="22"
