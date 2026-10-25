@@ -66,7 +66,13 @@ export default function MobileNavigation({
         <div>
           <div className="bi-mobile-nav__header">
             <span className="bi-header__logo" style={{ fontSize: 'var(--text-body)' }}>
-              <span className="bi-header__logo-badge" />
+              <img
+                src="/Logo.jpg"
+                alt=""
+                className="bi-header__logo-img"
+                width="22"
+                height="22"
+              />
               <span>Bimbing.in</span>
             </span>
             <button

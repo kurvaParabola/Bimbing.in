@@ -27,6 +27,13 @@ export default function SiteFooter() {
               className="bi-footer__logo"
               aria-label={`${siteConfig.name} — Kembali ke atas`}
             >
+              <img
+                src="/Logo.jpg"
+                alt=""
+                className="bi-header__logo-img"
+                width="22"
+                height="22"
+              />
               <span>{siteConfig.name}</span>
             </a>
             <p className="bi-footer__tagline">{siteConfig.tagline}</p>

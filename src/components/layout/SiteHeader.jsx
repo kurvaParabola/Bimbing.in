@@ -29,7 +29,13 @@ export default function SiteHeader() {
           className="bi-header__logo"
           aria-label={`${siteConfig.name} — Beranda`}
         >
-          <span className="bi-header__logo-badge" aria-hidden="true" />
+          <img
+            src="/Logo.jpg"
+            alt=""
+            className="bi-header__logo-img"
+            width="26"
+            height="26"
+          />
           <span>{siteConfig.name}</span>
         </a>
 

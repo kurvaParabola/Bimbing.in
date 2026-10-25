@@ -48,13 +48,13 @@
   transform: translateY(-1px);
 }
 
-.bi-header__logo-badge {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
+.bi-header__logo-img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
   border-radius: var(--radius-full);
-  background-color: var(--color-cobalt-pop);
-  border: 1px solid var(--color-sticker-black);
+  display: block;
+  flex-shrink: 0;
 }
 
 /* Desktop Navigation */
