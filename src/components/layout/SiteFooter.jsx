@@ -68,6 +68,20 @@ export default function SiteFooter() {
             <div className="bi-footer__info-item">
               <span>{siteConfig.responseNote}</span>
             </div>
+            {siteConfig.whatsapp.isConfigured && siteConfig.whatsapp.displayNumber && (
+              <div className="bi-footer__info-item">
+                <strong>Nomor WhatsApp:</strong>
+                <a
+                  href={`https://wa.me/${siteConfig.whatsapp.number}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bi-footer__link"
+                  style={{ display: 'inline', padding: 0 }}
+                >
+                  {siteConfig.whatsapp.displayNumber}
+                </a>
+              </div>
+            )}
             <div style={{ marginTop: 'var(--spacing-16)' }}>
               <WhatsAppButton placement="footer" size="sm" />
             </div>

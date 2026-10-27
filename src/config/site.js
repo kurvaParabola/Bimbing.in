@@ -3,8 +3,36 @@
  * Sumber kebenaran tunggal untuk nomor WhatsApp, metadata situs, dan flag fitur.
  */
 
+function normalizeWaNumber(number) {
+  if (!number) return '';
+  let cleaned = String(number).replace(/[^0-9]/g, '');
+  // Konversi otomatis format lokal Indonesia (08...) ke format internasional WhatsApp (628...)
+  if (cleaned.startsWith('0')) {
+    cleaned = '62' + cleaned.slice(1);
+  }
+  return cleaned;
+}
+
+function formatDisplayNumber(number) {
+  if (!number) return '';
+  const cleaned = normalizeWaNumber(number);
+  // Format 6285668773350 -> +62 856-6877-3350
+  if (cleaned.startsWith('62') && cleaned.length >= 11) {
+    const prefix = '+62';
+    const part1 = cleaned.slice(2, 5);
+    const part2 = cleaned.slice(5, 9);
+    const part3 = cleaned.slice(9);
+    return `${prefix} ${part1}-${part2}-${part3}`;
+  }
+  return cleaned;
+}
+
 const rawWaNumber = import.meta.env.VITE_WA_NUMBER || '';
-const isPlaceholderNumber = !rawWaNumber || rawWaNumber === '6281234567890' || rawWaNumber === 'YOUR_PHONE_NUMBER';
+const normalizedWaNumber = normalizeWaNumber(rawWaNumber);
+const isPlaceholderNumber =
+  !normalizedWaNumber ||
+  normalizedWaNumber === '6281234567890' ||
+  rawWaNumber === 'YOUR_PHONE_NUMBER';
 
 if (isPlaceholderNumber) {
   // Peringatan keras saat build/dev sesuai PRD 12.2
@@ -24,8 +52,9 @@ export const siteConfig = {
 
   // WhatsApp Configuration
   whatsapp: {
-    number: isPlaceholderNumber ? '' : rawWaNumber.replace(/[^0-9]/g, ''),
+    number: isPlaceholderNumber ? '' : normalizedWaNumber,
     rawNumber: rawWaNumber,
+    displayNumber: isPlaceholderNumber ? '' : formatDisplayNumber(normalizedWaNumber),
     isConfigured: !isPlaceholderNumber,
   },
 
