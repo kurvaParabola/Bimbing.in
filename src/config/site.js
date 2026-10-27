@@ -27,7 +27,9 @@ function formatDisplayNumber(number) {
   return cleaned;
 }
 
-const rawWaNumber = import.meta.env.VITE_WA_NUMBER || '';
+// Default nomor WhatsApp resmi (informasi publik, aktif saat deploy tanpa file .env di git)
+const DEFAULT_WA_NUMBER = '6285668773350';
+const rawWaNumber = import.meta.env.VITE_WA_NUMBER || DEFAULT_WA_NUMBER;
 const normalizedWaNumber = normalizeWaNumber(rawWaNumber);
 const isPlaceholderNumber =
   !normalizedWaNumber ||
