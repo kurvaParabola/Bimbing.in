@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import WhatsAppButton from '../ui/WhatsAppButton.jsx';
 import Icon from '../ui/Icon.jsx';
 import './MobileNavigation.css';
@@ -16,9 +17,15 @@ export default function MobileNavigation({
   const panelRef = useRef(null);
   const closeBtnRef = useRef(null);
 
-  // Keyboard handler (Esc) & Focus Management
+  // Keyboard handler (Esc) & Focus Management & Body scroll lock
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen) {
+      document.body.style.overflow = '';
+      return;
+    }
+
+    // Kunci scroll background saat menu mobile aktif
+    document.body.style.overflow = 'hidden';
 
     // Focus close button saat panel dibuka
     closeBtnRef.current?.focus();
@@ -33,6 +40,7 @@ export default function MobileNavigation({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => {
+      document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, onClose, triggerRef]);
@@ -42,7 +50,9 @@ export default function MobileNavigation({
     triggerRef?.current?.focus();
   };
 
-  return (
+  if (typeof document === 'undefined') return null;
+
+  return createPortal(
     <div
       id="mobile-navigation"
       className={`bi-mobile-nav ${isOpen ? 'bi-mobile-nav--open' : ''}`.trim()}
@@ -118,6 +128,7 @@ export default function MobileNavigation({
           </p>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
